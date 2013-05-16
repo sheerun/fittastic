@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130516125250) do
+ActiveRecord::Schema.define(version: 20130516130011) do
+
+  create_table "activities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "description"
+    t.integer  "facebook_place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "archived_fundraisers", force: true do |t|
     t.integer  "team_id"
@@ -25,6 +33,13 @@ ActiveRecord::Schema.define(version: 20130516125250) do
     t.string   "name"
     t.string   "picture"
     t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facebook_places", force: true do |t|
+    t.string   "facebook_id"
+    t.string   "facebook_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
