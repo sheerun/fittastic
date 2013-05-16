@@ -20,6 +20,7 @@ gem 'slim-rails'
 
 # Assets
 gem 'jquery-rails'
+gem 'rails-timeago', '~> 2.0'
 
 # API
 gem 'jbuilder', '~> 1.0.1'
