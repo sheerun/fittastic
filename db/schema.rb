@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130516102336) do
+ActiveRecord::Schema.define(version: 20130516125250) do
+
+  create_table "archived_fundraisers", force: true do |t|
+    t.integer  "team_id"
+    t.integer  "campaign_id"
+    t.decimal  "total_amount", precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "campaigns", force: true do |t|
+    t.string   "name"
+    t.string   "picture"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "members", force: true do |t|
     t.integer  "user_id"
