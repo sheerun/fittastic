@@ -24,5 +24,6 @@ gem 'jquery-rails'
 # API
 gem 'jbuilder', '~> 1.0.1'
 
+gem 'yajl-ruby'
 gem 'unicorn'
 gem 'debugger', group: [:development, :test]
