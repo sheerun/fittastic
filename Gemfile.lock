@@ -30,6 +30,7 @@ GEM
     autoprefixer-rails (0.4.20130515)
       execjs
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.0.4.2)
     builder (3.1.4)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -128,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bcrypt-ruby (~> 3.0.0)
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   debugger
   jbuilder (~> 1.0.1)
