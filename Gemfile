@@ -29,6 +29,9 @@ gem 'unicorn'
 
 group :development do
   gem 'coffee-rails-source-maps'
+  gem 'rails_best_practices'
+  gem 'letter_opener'
+  gem 'commands'
 end
 
 gem 'debugger', group: [:development, :test]
