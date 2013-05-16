@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'sidekiq'
 gem 'sinatra', :require => nil # Backend for sidekiq
+gem 'devise', '>= 3.0.0.rc'
 
 # Front-end
 gem 'slim', '~> 1.3.8'
