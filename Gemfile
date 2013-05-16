@@ -26,4 +26,9 @@ gem 'jbuilder', '~> 1.0.1'
 
 gem 'yajl-ruby'
 gem 'unicorn'
+
+group :development do
+  gem 'coffee-rails-source-maps'
+end
+
 gem 'debugger', group: [:development, :test]
