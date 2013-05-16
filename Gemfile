@@ -7,8 +7,11 @@ gem 'sqlite3'
 
 # Back-end
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'sidekiq'
+gem 'sinatra', :require => nil # Backend for sidekiq
 
 # Front-end
+gem 'slim', '~> 1.3.8'
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
