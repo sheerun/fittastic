@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Rails4::Application.config.secret_key_base = '52ff0fed0275f255a8e589343b61d034619f0a53a8de373ef0a835d52bf7d8511046c9889df92769a26d9f08524fa85cdf4bd95bbddfc139786399239ba2253f'
+TeamProject::Application.config.secret_key_base = '592865b1a37b1b1df06ba54e3333c621dd2ca25e105ff2b635d20700575a3cbd9b8cdbf5e9ccd215edc02707fd37261718cebfbf8a5fc463f08192aab959383d'
