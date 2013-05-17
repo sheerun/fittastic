@@ -21,7 +21,11 @@ html
       opacity: 0.5
 
 .ft-content
-  padding-top: 2em
+  padding: 2em 0
+
+.ft-sidebar
+  section + section
+    padding-top: 3em
 
 .ft-feed-item
   min-height: 64px
@@ -60,3 +64,19 @@ html
 
   .ft-feed-item-button
     display: none
+
+.ft-goal,
+.ft-rank
+  td, th
+    &:last-of-type
+      text-align: right
+
+.ft-rank
+  .lead
+    margin-bottom: 1em
+
+.ft-rank-row--mine
+  font-weight: bold
+
+  & ~ tr td
+    opacity: 0.5

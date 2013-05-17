@@ -45,4 +45,41 @@ header.ft-header
             p Przebiegnąłem 10 km pierwszy raz w życiu.
             .muted 20 godzin temu
 
-  .span4
+  .ft-sidebar.span4
+
+    section.ft-goal
+      header
+        h1.lead Aktualny cel
+        a href="#"
+          img src="http://placehold.it/400x200" alt="Nazwa zbiórki"
+
+      table.table
+        tbody
+          tr
+            th Ogranizacja
+            td Pajacyk
+          tr
+            th Aktualny postęp
+            td 600/1000 zł
+
+    section.ft-rank
+      h1.lead Ranking
+
+      table.table
+        thead
+          tr
+            th #
+            th Imię i nazwisko
+            th Zebrana kwota
+        tbody
+          - (0...5).each do |n|
+            - if n === 2
+              - author = 'Dominik Porada'
+              - class_name = 'ft-rank-row--mine'
+            - else
+              - author = 'Adam Stankiewicz'
+              - class_name = ''
+            tr class=class_name
+              td= n + 1
+              td= author
+              td #{100 - n} zł
