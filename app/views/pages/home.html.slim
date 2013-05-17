@@ -1,2 +1,5 @@
-h1 Pages#home
-p Find me in app/views/pages/home.html.slim
+- if current_user.present?
+  = link_to 'Wyloguj się', destroy_user_session_path, :method => :delete
+- else
+  =' link_to 'Zaloguj się przez Facebook', user_omniauth_authorize_path(:facebook), :class => "btn btn-primary"
+  = link_to 'Nie masz tam konta?', new_user_registration_path
