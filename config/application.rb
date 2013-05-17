@@ -13,5 +13,6 @@ module TeamProject
     I18n.locale = :pl
     config.action_mailer.default_url_options = { :host => "#{ENV['RAILS_HOST'] || 'localhost'}:3000" }
     config.lograge.enabled = true
+    config.assets.initialize_on_precompile = false
  end
 end
