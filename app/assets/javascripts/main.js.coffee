@@ -1,7 +1,7 @@
 console.log 'Fittastic'
 
 $ ->
-  $('.ft-feed-item-button').on 'click', ->
+  $('.ft-feed-item-button:not(.ft-feed-item--mine)').on 'click', ->
     $button = $(this)
     value = $button.attr 'data-value'
 
