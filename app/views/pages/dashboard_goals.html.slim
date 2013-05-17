@@ -1,1 +1,59 @@
-| dashboard_goals
+= render 'top'
+= render 'dashboard_navigation'
+
+.ft-content.row-fluid role="main"
+  .span8
+    section
+      h1.lead Wybierz cel
+
+      table.table
+        thead
+          tr
+            th Wybrana fundancja
+            th
+        tbody
+          tr
+            td
+              p
+                strong Nazwa aktualnie wybranej fundacji
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec leo tortor. Praesent dapibus urna sit amet mauris interdum porta. Donec in sem eros. Maecenas laoreet est a metus varius egestas. Duis a gravida turpis. Phasellus gravida elit nec neque porta gravida.
+            td
+              a.btn.disabled href="#" Wybrana
+
+      table.table
+        thead
+          tr
+            th Cel do wyboru
+            th
+        tbody
+          - 5.times do
+            tr
+              td
+                p
+                  strong Nazwa fundacji
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec leo tortor. Praesent dapibus urna sit amet mauris interdum porta. Donec in sem eros. Maecenas laoreet est a metus varius egestas. Duis a gravida turpis. Phasellus gravida elit nec neque porta gravida.
+              td
+                a.btn.btn-info href="#" Wybierz
+
+
+  .ft-sidebar.span4
+    section
+      h1.lead Ustawienia zbiórki
+
+      .form
+        .control-group
+          label.control-label for="input1" Kwota przeznaczona dla fundacji
+          .controls
+            .input-append
+              input type="text" id="input1" value="1000"
+              span.add-on zł
+        .control-group
+          label.control-label for="input2"
+            ' Maksymalna kwota do rozdysponowania przez 1 pracownika
+            span.muted (kwota przeznaczona podzielona przez ilość pracowników)
+          .controls
+            .input-append
+              input type="text" id="input2" value="100" disabled=""
+              span.add-on zł
+        .control-group
+          input.btn.btn-primary type="submit" value="Zaktualizuj"
