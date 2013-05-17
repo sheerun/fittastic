@@ -32,6 +32,8 @@ gem 'rails-timeago', '~> 2.0'
 
 # API
 gem 'jbuilder', '~> 1.0.1'
+gem 'httparty'
+gem 'nokogiri'
 
 gem 'yajl-ruby'
 gem 'quiet_assets', '>= 1.0.2'
@@ -47,6 +49,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-ctags-bundler'
   gem 'rb-fsevent', '~> 0.9.1'
+  gem "rails-erd"
 end
 
 group :development, :test do
