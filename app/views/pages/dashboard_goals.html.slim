@@ -26,12 +26,26 @@
             th Cel do wyboru
             th
         tbody
-          - 5.times do
+          - for item in @wii
             tr
               td
                 p
-                  strong Nazwa fundacji
-                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec leo tortor. Praesent dapibus urna sit amet mauris interdum porta. Donec in sem eros. Maecenas laoreet est a metus varius egestas. Duis a gravida turpis. Phasellus gravida elit nec neque porta gravida.
+                  strong #{item['user']}
+                img src="#{item['photo']}" alt="Zdjęcie"
+                p
+                  strong Cel:
+                  #{item['purpose']}
+                p
+                  strong Okazja:
+                  #{item['occasion']}
+                / "aim" - "Cel: 100"
+                / "user" - "Krystyna"
+                / "purpose" - "Oliwkowe drzewko"
+                / "occasion" - "urodziny"
+                / "link" - "http://siepom..."
+                / "rised" - "15%"
+                / "photo" - "http://amazon..."
+
               td
                 a.btn.btn-info href="#" Wybierz
 
