@@ -2,7 +2,9 @@ TeamProject::Application.routes.draw do
   devise_for :users
 
   root "pages#home"
+
   get 'pages/activity'
+  get 'pages/dashboard'
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

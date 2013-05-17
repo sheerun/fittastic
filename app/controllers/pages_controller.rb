@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def activity
   end
+
+  def dashboard
+  end
 end
