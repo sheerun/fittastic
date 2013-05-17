@@ -56,7 +56,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'debugger'
   gem 'pry'
   gem 'thin'
@@ -64,6 +63,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'unicorn'
 end
