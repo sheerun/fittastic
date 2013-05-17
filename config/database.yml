@@ -13,6 +13,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: fittastic
   username: fittastic
   pool: 5
