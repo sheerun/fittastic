@@ -30,7 +30,9 @@ gem 'rails-timeago', '~> 2.0'
 gem 'jbuilder', '~> 1.0.1'
 
 gem 'yajl-ruby'
-gem 'unicorn'
+gem 'quiet_assets', '>= 1.0.2'
+gem 'lograge'
+gem 'logstash-event'
 
 group :development do
   gem 'coffee-rails-source-maps'
@@ -39,4 +41,13 @@ group :development do
   gem 'commands'
 end
 
-gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'debugger'
+  gem 'pry'
+  gem 'thin'
+end
+
+group :production do
+  gem 'pg'
+  gem 'unicorn'
+end

@@ -28,6 +28,7 @@ TeamProject::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.assets.compress = false
+  config.assets.logger = false
 
   # Enable Sass source maps
   config.sass.debug_info = true
