@@ -1,0 +1,12 @@
+= render 'progress_bar'
+= render 'top'
+= render 'dashboard_navigation'
+
+.ft-content.row-fluid role="main"
+  .span8
+    = render 'post_form'
+    section= render 'feed'
+
+  .ft-sidebar.span4
+    section.ft-goal= render 'goal'
+    section.ft-rank= render 'ranking'
