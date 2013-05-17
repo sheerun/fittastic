@@ -4,6 +4,9 @@ ruby '1.9.3'
 gem 'rails', '4.0.0.rc1'
 gem 'pg'
 
+gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
 # Back-end
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'sidekiq'
