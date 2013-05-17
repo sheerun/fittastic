@@ -1,1 +1,41 @@
-| Hi
+.ft-progress.progress.progress-success
+  .hidden Aktualny status zbiórki
+  .bar style="width: 60%" 600<span>/1000 zł</span>
+
+header.ft-header
+  .pull-right
+    .btn-group
+      a.btn.btn-large href="#" Dominik Porada
+      button.btn.btn-large.dropdown-toggle data-toggle="dropdown"
+        .caret
+      ul.dropdown-menu.pull-right role="menu"
+        li
+          a href="#" Wyloguj się
+
+  .page-header
+    h1
+     ' Fittastic
+     small Monterail
+
+.ft-content.row-fluid role="main"
+  section.span8
+    h1.lead Aktywność zbiórki
+
+    .ft-feed
+      - 10.times do
+        article.ft-feed-item.media
+          .pull-right
+            .ft-feed-item-value
+              ' Wartość wpisu:
+              b
+                span data-value-updatable="" 10
+                '  zł
+            button.ft-feed-item-button.btn.btn-success.btn-small data-value="1" Podbij o 1 zł
+          .media-object
+            img src="http://placehold.it/64x64" alt="Adam Stankiewicz"
+          .media-body
+            h4.media-heading Adam Stankiewicz
+            p Przebiegnąłem 10 km pierwszy raz w życiu.
+            .muted 20 godzin temu
+
+  .span4
