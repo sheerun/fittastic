@@ -5,6 +5,9 @@ TeamProject::Application.routes.draw do
 
   get 'pages/activity'
   get 'pages/dashboard'
+  get 'pages/dashboard_goals'
+  get 'pages/dashboard_company'
+  get 'pages/dashboard_employees'
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
