@@ -17,3 +17,6 @@
 
 # Ignore generated source maps
 public/assets/source_maps
+
+# mac files
+*.DS_Store
