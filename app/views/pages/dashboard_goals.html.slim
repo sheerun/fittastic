@@ -30,8 +30,10 @@
             tr
               td.tk-goal-item
                 img src="#{item['photo']}" alt="Zdjęcie"
-                p <b>#{item['user'].strip}:</b> #{item['purpose']}
-                p Okazja: <i>#{item['occasion']}</i>
+                p.tk-goal-item-title= item['user'].strip
+                p= item['purpose']
+                - unless item['occasion'].strip.downcase === 'inne'
+                  p Okazja: <i>#{item['occasion']}</i>
                 / "aim" - "Cel: 100"
                 / "user" - "Krystyna"
                 / "purpose" - "Oliwkowe drzewko"
