@@ -28,16 +28,10 @@
         tbody
           - for item in @wii
             tr
-              td
-                p
-                  strong #{item['user']}
+              td.tk-goal-item
                 img src="#{item['photo']}" alt="Zdjęcie"
-                p
-                  strong Cel:
-                  #{item['purpose']}
-                p
-                  strong Okazja:
-                  #{item['occasion']}
+                p <b>#{item['user'].strip}:</b> #{item['purpose']}
+                p Okazja: <i>#{item['occasion']}</i>
                 / "aim" - "Cel: 100"
                 / "user" - "Krystyna"
                 / "purpose" - "Oliwkowe drzewko"
