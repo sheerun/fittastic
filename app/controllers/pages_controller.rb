@@ -4,7 +4,9 @@ class PagesController < ApplicationController
   expose :user
 
   def home
-
+    if current_user.present? 
+      redirect_to edit_team_path(current_user.team) 
+    end
   end
 
   def activity

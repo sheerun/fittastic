@@ -7,3 +7,7 @@ pl:
         password_confirmation: Potwierdzenie hasła
         first_name: Imię
         last_name: Nazwisko
+      team:
+        name: Nazwa
+        nip: NIP
+        budget: Budżet miesięczny

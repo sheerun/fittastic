@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = :pl
   end
+
+  decent_configuration do
+    strategy DecentExposure::StrongParametersStrategy
+  end
 end
