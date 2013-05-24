@@ -1,5 +1,33 @@
 = render 'top'
 
-- unless current_user.present?
-  =' link_to 'Zaloguj się przez Facebook', user_omniauth_authorize_path(:facebook), :class => "btn btn-primary"
-  = link_to 'Nie masz tam konta?', new_user_registration_path
+.ft-home-content.row-fluid role="main"
+  .span6
+  .span6.fk-invite
+    h2.fk-invite-title Krótki slogan reklamowy
+    p.fk-invite-content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+
+    - unless current_user.present?
+      p.fk-invite-content
+        = link_to 'Zaloguj się przez Facebook', user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large"
+      p.fk-invite-content--dimmed
+        = link_to 'Nie masz tam konta?', new_user_registration_path
+
+.ft-content.row-fluid
+  section.span4.fk-feature
+    .fk-feature-header
+      h1.lead O co chodzi?
+      img src="http://placehold.it/100x50" alt=""
+    .fk-feature-content
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+  section.span4.fk-feature
+    .fk-feature-header
+      h1.lead Dlaczego Fittastic?
+      img src="http://placehold.it/100x50" alt=""
+    .fk-feature-content
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+  section.span4.fk-feature
+    .fk-feature-header
+      h1.lead Na pewno?
+      img src="http://placehold.it/100x50" alt=""
+    .fk-feature-content
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
