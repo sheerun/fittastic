@@ -1,0 +1,25 @@
+h1.lead Aktywność zbiórki
+
+.ft-feed
+  - 10.times do |n|
+    - if [1, 4].include? n
+      - author = 'Dominik Porada'
+      - class_name = 'ft-feed-item--mine'
+    - else
+      - author = 'Adam Stankiewicz'
+      - class_name = ''
+
+    article.ft-feed-item.media class=class_name
+      .pull-right
+        .ft-feed-item-value
+          ' Wartość wpisu:
+          b
+            span data-value-updatable="" 10
+            '  zł
+        button.ft-feed-item-button.btn.btn-success.btn-small data-value="1" Podbij o 1 zł
+      .media-object
+        img src="http://placehold.it/64x64" alt=author
+      .media-body
+        h4.media-heading= author
+        p Przebiegnąłem 10 km pierwszy raz w życiu.
+        .muted 20 godzin temu

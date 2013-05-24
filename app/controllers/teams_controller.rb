@@ -2,6 +2,10 @@ class TeamsController < ApplicationController
   
   expose :team, :attributes => :team_params
 
+  def show
+    
+  end
+
   def update
     if team.save
       redirect_to edit_team_path(team), :notice => "Zapisano!"
