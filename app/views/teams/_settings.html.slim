@@ -1,0 +1,9 @@
+.ft-content.row-fluid role="main"
+  .span8
+    section
+      h1.lead Ustawienia firmy
+      = simple_form_for team, :class => "form-horizontal" do |f|
+        = f.input :name
+        = f.input :nip
+        = f.input :budget
+        = f.submit "Zapisz ustawienia"

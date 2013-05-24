@@ -10,8 +10,10 @@ class TeamsController < ApplicationController
     end
   end
   
-  def show
-
+  def edit
+    if params[:page] == "goal"
+      @campaigns = Siepomaga.campaigns
+    end
   end
 
   private

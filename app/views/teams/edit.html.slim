@@ -1,14 +1,3 @@
 = render 'top'
 = render 'dashboard_navigation'
-
-.ft-content.row-fluid role="main"
-  .span8
-    section
-      h1.lead Ustawienia firmy
-      = simple_form_for team, :class => "form-horizontal" do |f|
-        .control-group
-          = f.input :name
-          = f.input :nip
-          = f.input :budget
-        .control-group
-          = f.submit "Zapisz ustawienia", :class => "btn btn-primary"
+= render params[:page] || 'settings'
