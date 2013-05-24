@@ -44,6 +44,7 @@ gem 'lograge'
 gem 'logstash-event'
 
 group :development do
+  gem 'sqlite3'
   gem 'coffee-rails-source-maps'
   gem 'rails_best_practices'
   gem 'letter_opener'
