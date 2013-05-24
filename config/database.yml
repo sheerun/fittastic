@@ -12,4 +12,9 @@ test:
   pool: 5
   host: localhost
 
-production: '<%= ENV['HEROKU_POSTGRESQL_AQUA_URL'] %>'
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: fittastic_production
+  pool: 5
+  host: localhost
