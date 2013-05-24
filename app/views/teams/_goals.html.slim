@@ -1,35 +1,16 @@
-.ft-content.row-fluid role="main"
+.ft-content.row-fluid role='main'
   .span8
     section
       h1.lead Wybierz cel
 
-      - if team.campaign.present?
-        table.table
-          thead
-            tr
-              th Wybrana fundancja
-              th
-          tbody
-            tr
-              td
-                p
-                  strong= team.campaign.name
-                p= team.campaign.description
-              td
-                a.btn.disabled href="#" Wybrana
-
       - for campaign in @campaigns
-        = simple_form_for team do |f|
-          h2= link_to campaign['purpose'], campaign['link']
-          = image_tag campaign['photo']
-          / "aim" - "Cel: 100"
-          / "user" - "Krystyna"
-          / "purpose" - "Oliwkowe drzewko"
-          / "occasion" - "urodziny"
-          / "link" - "http://siepom..."
-          / "rised" - "15%"
-          / "photo" - "http://amazon..."
-          = f.input :campaign_id, 
-            as: 'hidden',
-            input_html: { value:  campaign['purpose'] }
+        - url = team_campaign_path(team)
+        = simple_form_for [team, campaign], method: 'put', url: url do |f|
+          h2 = link_to campaign['purpose'], campaign['link']
+          = image_tag campaign['picture']
+          = f.input :
           = f.submit 'Wybierz', :class => 'btn btn-info'
+
+  - if team.campaign.present?
+    .ft-sidebar.span4
+      section.ft-goal= render 'goal'

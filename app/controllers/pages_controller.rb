@@ -4,8 +4,8 @@ class PagesController < ApplicationController
   expose :user
 
   def home
-    if current_user.present? 
-      redirect_to edit_team_path(current_user.team) 
+    if current_user.present?
+      redirect_to edit_team_path(current_user.team)
     end
   end
 
@@ -13,9 +13,5 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-  end
-
-  def dashboard_goals
-    @wii = Siepomaga.campaigns()
   end
 end

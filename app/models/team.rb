@@ -7,7 +7,12 @@ class Team < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :nip, :presence => true
-  validates :budget, 
-    :presence => true, 
+  validates :budget,
+    :presence => true,
     :numericality => { :only_integer => true, :greather_than => 0 }
+
+  def set_campaign!(campaign)
+    self.campaign = campaign
+    save!
+  end
 end
