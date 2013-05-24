@@ -1,10 +1,17 @@
-h2 Zarejestruj się
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
-  .form-actions
-    = f.button :submit, "Zarejestruj się"
-= render "devise/shared/links"
+= render 'pages/top'
+
+.fk-content.row-fluid role="main"
+  h1.lead Zarejestruj się
+
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = f.error_notification
+    .control-group
+      = f.input :email, :required => true, :autofocus => true
+      = f.input :password, :required => true
+      = f.input :password_confirmation, :required => true
+    .control-group
+      p= f.button :submit, "Zarejestruj się", :class => 'btn btn-info btn-large'
+      .help-block Rejestrując się, akceptujesz regulamin serwisu.
+
+  hr
+  = render "devise/shared/links"
