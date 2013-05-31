@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   
   expose :team, :attributes => :team_params
+  expose(:activity) { Activity.new }
 
   def show
     authorize! :read, team  

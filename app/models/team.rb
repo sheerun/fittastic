@@ -2,6 +2,7 @@ class Team < ActiveRecord::Base
   has_many :archived_fundraisers
   has_many :members
   has_many :users, :through => :members
+  has_many :activities
 
   belongs_to :campaign
 
@@ -12,6 +13,10 @@ class Team < ActiveRecord::Base
     :numericality => { :only_integer => true, :greather_than => 0 }
 
   validate :check_nip
+
+  def feed
+    activities.order('id DESC')
+  end
 
   def set_campaign!(campaign)
     self.campaign = campaign

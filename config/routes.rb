@@ -7,7 +7,9 @@ TeamProject::Application.routes.draw do
 
   resources :teams, only: [:show, :update, :edit] do
     resource :campaign, only: [:update]
-    resources :users, only: [:show, :destroy]
+    resources :users, only: [:show, :destroy] do
+      resources :activities, only: [:create, :destroy]
+    end
   end
 
 

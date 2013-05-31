@@ -1,4 +1,4 @@
-class TeamsController < ApplicationController
+class UsersController < ApplicationController
   
   expose :user, :attributes => :user_params
 

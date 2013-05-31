@@ -27,4 +27,12 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def picture(type = nil)
+    if type.present?
+      "http://graph.facebook.com/#{facebook_id}/picture?type=#{type}"
+    else
+      "http://graph.facebook.com/#{facebook_id}/picture"
+    end
+  end
 end
