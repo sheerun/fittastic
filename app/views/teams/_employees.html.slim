@@ -11,13 +11,14 @@
             th Data rejestracji
             th
         tbody
-          - 10.times do
+          - for user in team.users
             tr
-              td Dominik Porada
-              td 100 zł
-              td 10.04.2013, 16:10
+              td= "#{user.first_name} #{user.last_name}"
+              td 0 zł
+              td= l user.created_at
               td
-                a.btn.btn-danger href="#" Usuń
+                - if user != current_user
+                  = link_to 'Usuń', team_user_path(team, user), :method => :destroy, :confirm => true, :class => 'btn btn-danger'
 
 
   .ft-sidebar.span4

@@ -7,7 +7,9 @@ TeamProject::Application.routes.draw do
 
   resources :teams, only: [:show, :update, :edit] do
     resource :campaign, only: [:update]
+    resources :users, only: [:show, :destroy]
   end
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
