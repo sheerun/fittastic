@@ -7,14 +7,8 @@ table.table
       th Imię i nazwisko
       th Zebrana kwota
   tbody
-    - (0...5).each do |n|
-      - if n === 2
-        - author = 'Dominik Porada'
-        - class_name = 'ft-rank-row--mine'
-      - else
-        - author = 'Adam Stankiewicz'
-        - class_name = ''
-      tr class=class_name
-        td= n + 1
-        td= author
-        td #{100 - n} zł
+    - team.best_users.each_with_index do |user, index|
+      tr class=(user == current_user ? 'ft-rank-row--mine' : '')
+        td= index + 1
+        td= user.full_name
+        td= "#{user.total_fundraiser} zł"

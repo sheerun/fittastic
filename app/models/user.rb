@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
       "http://graph.facebook.com/#{facebook_id}/picture"
     end
   end
+
+  def total_fundraiser
+    activities.reduce(0){ |sum, activity| sum + activity.value }.round(2)
+  end
 end

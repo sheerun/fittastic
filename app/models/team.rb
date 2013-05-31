@@ -31,6 +31,14 @@ class Team < ActiveRecord::Base
     self[:token]
   end
 
+  def total_fundraiser
+    activities.reduce(0){ |sum, activity| sum + activity.value }.round(2)
+  end
+
+  def best_users
+    users.order('id DESC')
+  end
+
   private
     def check_nip
       n = Nip.new(nip)
