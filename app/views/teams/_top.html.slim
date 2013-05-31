@@ -1,14 +1,16 @@
 header.ft-header
   .pull-right
     .btn-group
-      a.btn.btn-large href="#" Dominik Porada
+      = link_to current_user.full_name, team_user_path(team, current_user), 
+        :class => "btn btn-large"
       button.btn.btn-large.dropdown-toggle data-toggle="dropdown"
         .caret
       ul.dropdown-menu.pull-right role="menu"
         li
-          a href="#" Wyloguj się
-
+          = link_to "Wyloguj się", destroy_user_session_path, 
+            :method => :delete
   .page-header
     h1
      ' Fittastic
-     small Monterail
+     - if team.name.present?
+      small= team.name
