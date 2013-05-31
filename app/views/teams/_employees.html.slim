@@ -24,15 +24,6 @@
   .ft-sidebar.span4
     section
       h1.lead Dodaj nowego pracownika
-
-      .form
-        label.control-group
-          .control-label for="inputName" Imię i nazwisko
-          .controls
-            input type="text" id="inputName"
-        label.control-group
-          .control-label for="inputEmail" Adres email
-          .controls
-            input type="text" id="inputEmail"
-        .control-group
-          input.btn.btn-primary type="submit" value="Dodaj pracownika"
+      p Wystarczy, że wyślesz swoim pracownikom następujący link rejestracyjny:
+      pre
+        = team_url(team, team.token => "ok".html_safe).html_safe

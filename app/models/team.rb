@@ -18,6 +18,14 @@ class Team < ActiveRecord::Base
     save!
   end
 
+  def token
+    if self[:token].blank?
+      update_attribute(:token, Devise.friendly_token[0,5])
+    end
+
+    self[:token]
+  end
+
   private
     def check_nip
       n = Nip.new(nip)
