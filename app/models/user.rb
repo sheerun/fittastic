@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
       team = Team.new
       team.save(:validate => false)
       teams << team
+      update_attribute(:admin => true)
     end
     
     teams.first

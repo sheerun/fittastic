@@ -1,12 +1,13 @@
-nav
-  h1.hidden Nawigacja
+- if can? :manage, team
+  nav
+    h1.hidden Nawigacja
 
-  ul.nav.nav-tabs
-    li(class=(params[:action] == 'show' ? "active" : ""))
-      = link_to 'Aktywność', team_path(team)
-    li(class=(params[:action] == 'edit' && params[:page].blank? ? "active" : ""))
-      = link_to 'Ustawienia firmy', edit_team_path(team)
-    li(class=(params[:page] == "goals" ? "active" : ""))
-      = link_to 'Cel zbiórki', edit_team_path(team, :page => "goals")
-    li(class=(params[:page] == "employees" ? "active" : ""))
-      = link_to 'Pracownicy', edit_team_path(team, :page => "employees")
+    ul.nav.nav-tabs
+      li(class=(params[:action] == 'show' ? "active" : ""))
+        = link_to 'Aktywność', team_path(team)
+      li(class=(params[:action] == 'edit' && params[:page].blank? ? "active" : ""))
+        = link_to 'Ustawienia firmy', edit_team_path(team)
+      li(class=(params[:page] == "goals" ? "active" : ""))
+        = link_to 'Cel zbiórki', edit_team_path(team, :page => "goals")
+      li(class=(params[:page] == "employees" ? "active" : ""))
+        = link_to 'Pracownicy', edit_team_path(team, :page => "employees")

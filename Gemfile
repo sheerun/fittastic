@@ -13,6 +13,7 @@ gem 'sinatra', :require => nil # Backend for sidekiq
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'decent_exposure'
+gem 'cancan'
 
 # Front-end
 gem 'slim', '~> 1.3.8'
@@ -26,6 +27,7 @@ gem 'turbolinks'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'rails-i18n'
+gem 'nip'
 
 # Assets
 gem 'jquery-rails'

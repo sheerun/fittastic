@@ -5,7 +5,11 @@ class PagesController < ApplicationController
 
   def home
     if current_user.present?
-      redirect_to edit_team_path(current_user.team)
+      if can?(:manage, current_user.team) && !current_user.team.valid?
+        redirect_to edit_team_path(current_user.team)
+      else
+        redirect_to team_path(current_user.team)
+      end
     end
   end
 
