@@ -3,7 +3,10 @@ TeamProject::Application.routes.draw do
   root to: "pages#home"
 
   devise_for :users, :controllers => { 
-    :omniauth_callbacks => "users/omniauth_callbacks" }
+    :omniauth_callbacks => "users/omniauth_callbacks",
+    :sessions => "users/sessions",
+    :registrations => "users/registrations"
+  }
 
   resources :teams, only: [:show, :update, :edit] do
     resource :campaign, only: [:update]

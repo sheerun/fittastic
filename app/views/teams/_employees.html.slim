@@ -25,5 +25,5 @@
     section
       h1.lead Dodaj nowego pracownika
       p Wystarczy, że wyślesz swoim pracownikom następujący link rejestracyjny:
-      pre
-        = team_url(team, team.token => "ok".html_safe).html_safe
+      pre style='font-size: 80%'
+        = new_user_registration_url(:t => team.token).html_safe

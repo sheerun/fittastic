@@ -4,7 +4,7 @@ module Facebook extend self
 
   # Raises FacebookDataError if provided data is incorrect
   #   the user called upen is unmodified in such case
-  def user_from_facebook_data(data, user = nil)
+  def user_from_facebook_data(data, user = nil, team = nil)
     email = data["info"].fetch("email")
     token = data["credentials"].fetch("token")
     user = user || find_by_email_or_facebook_token(email, token) || User.new
@@ -16,8 +16,12 @@ module Facebook extend self
       :first_name => data["info"].fetch("first_name"),
       :last_name => data["info"].fetch("last_name"),
       :email => email,
-      :password => Devise.friendly_token[0,20] 
+      :password => Devise.friendly_token[0,20]
     )
+
+    if team.present?
+      user.teams << team
+    end
 
     user
   rescue IndexError
