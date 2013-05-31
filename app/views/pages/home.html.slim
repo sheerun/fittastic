@@ -3,8 +3,11 @@
 .ft-home-content.row-fluid role="main"
   .span6
   .span6.fk-invite
-    h2.fk-invite-title Krótki slogan reklamowy
-    p.fk-invite-content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+    h2.fk-invite-title Pomóż sobie i innym!
+    p.fk-invite-content 
+      | Dołącz do grona osób którym zależy. Zmotywuj swoich pracowników. Popraw ich wydajność i zaangażowanie. 
+      br 
+      | Jednocześnie zbierz pieniądze na szczytny cel!
 
     - unless current_user.present?
       p.fk-invite-content
@@ -16,18 +19,18 @@
   section.span4.fk-feature
     .fk-feature-header
       h1.lead O co chodzi?
-      img src="http://placehold.it/100x50" alt=""
+      = image_tag 'awsome.png'
     .fk-feature-content
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+      p Fittastic to portal pozwalający pracodawcy monitorować aktywność fizyczną swoich pracowników, a pracownikom pomagać fundacjom  charytatywnym dbając jednocześnie o swoje zdrowie.
   section.span4.fk-feature
     .fk-feature-header
       h1.lead Dlaczego Fittastic?
-      img src="http://placehold.it/100x50" alt=""
+      = image_tag 'why.png'
     .fk-feature-content
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+      p Fittastic to wygodny portal pozwalający organizować zbiórki, monitorować postępy pracowników i jednoczyć firmę wokół wspólnego, szczytnego celu!
   section.span4.fk-feature
     .fk-feature-header
       h1.lead Na pewno?
-      img src="http://placehold.it/100x50" alt=""
+      = image_tag 'basci.png'
     .fk-feature-content
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum interdum eros, non auctor augue hendrerit ut. Fusce nunc mi, ullamcorper nec facilisis eu, accumsan eu dui. Nunc vitae magna quam, nec imperdiet lectus.
+      p Dzięki Fittastic udało się już zebrać 0zł na cele charytatywne. A 5 pracodawców codziennie motywuje i dogląda ponad 10 swoich pracowników. Dołącz do nich!
