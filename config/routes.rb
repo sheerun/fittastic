@@ -1,17 +1,16 @@
 TeamProject::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  root to: "pages#home"
+
+  devise_for :users, :controllers => { 
+    :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :teams, only: [:show, :update, :edit] do
     resource :campaign, only: [:update]
   end
 
-  root "pages#home"
-
-  get 'pages/activity'
-  get 'pages/dashboard'
-  get 'pages/dashboard_goals'
-  get 'pages/dashboard_company'
-  get 'pages/dashboard_employees'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

@@ -10,7 +10,6 @@ gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'sidekiq'
 gem 'sinatra', :require => nil # Backend for sidekiq
-gem 'devise', '>= 3.0.0.rc'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'decent_exposure'
@@ -41,6 +40,12 @@ gem 'yajl-ruby'
 gem 'quiet_assets', '>= 1.0.2'
 gem 'lograge'
 gem 'logstash-event'
+
+gem 'devise',              github: 'plataformatec/devise',     branch: 'rails4'
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack',             github: 'ernie/ransack',            branch: 'rails-4'
+gem 'activeadmin',         github: 'akashkamboj/active_admin', branch: 'rails4'
 
 group :development do
   gem 'sqlite3'
