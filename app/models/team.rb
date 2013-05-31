@@ -11,8 +11,16 @@ class Team < ActiveRecord::Base
     :presence => true,
     :numericality => { :only_integer => true, :greather_than => 0 }
 
+  validate :check_nip
+
   def set_campaign!(campaign)
     self.campaign = campaign
     save!
   end
+
+  private
+    def check_nip
+      n = Nip.new(nip)
+      errors[:nip] << 'Nieprawidłowy numer NIP' unless n.valid?
+    end
 end
