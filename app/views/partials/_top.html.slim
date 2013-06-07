@@ -12,6 +12,6 @@ header.ft-header
               :method => :delete
   .page-header
     h1
-     ' Fittastic
+     = image_tag 'logo.png', :height => 50
      - if respond_to?(:team) && team.name.present?
       small= team.name
