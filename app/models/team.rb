@@ -38,7 +38,7 @@ class Team < ActiveRecord::Base
   end
 
   def best_users
-    users.order('id DESC')
+    users.sort{ |a, b| b.total_fundraiser <=> a.total_fundraiser }.uniq[0..5]
   end
 
   private
