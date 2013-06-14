@@ -1,5 +1,5 @@
 .ft-progress.progress.progress-success
   .hidden Aktualny status zbiórki
-  .bar style="width: 5%"
+  .bar style="width: #{(team.total_fundraiser.to_f / team.budget).round}%"
     = team.total_fundraiser
-    span= "/1000 zł"
+    span= "/#{team.budget} zł"
