@@ -1,7 +1,6 @@
-h1.lead Aktywność zbiórki
 
 .ft-feed
-  - for activity in team.feed
+  - for activity in feed
     article.ft-feed-item.media class=(activity.user == current_user ? 'ft-feed-item--mine' : '')
       .pull-right
         .ft-feed-item-value

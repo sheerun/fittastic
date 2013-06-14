@@ -6,8 +6,8 @@
   .span8
     = render 'partials/post_form'
     section
-      h1.lead Aktywność zbiórki
-      = render 'partials/feed', :feed => team.feed
+      h1.lead Twoja aktywność
+      = render 'partials/feed', :feed => current_user.feed
 
   .ft-sidebar.span4
     section.ft-goal= render 'partials/goal'

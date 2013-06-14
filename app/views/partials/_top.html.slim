@@ -12,7 +12,6 @@ header.ft-header
               :method => :delete
   .page-header
     h1
-      
-      = link_to image_tag('logo.png', :height => 50), root_path
-      - if respond_to?(:team) && team.name.present?
-        small= team.name
+     ' Fittastic
+     - if respond_to?(:team) && team.name.present?
+      small= team.name
