@@ -15,6 +15,11 @@ TeamProject::Application.routes.draw do
     end
   end
 
+  resources :activities, :only => :show do
+    member do
+      get :upvote
+    end
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

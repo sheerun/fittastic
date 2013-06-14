@@ -9,7 +9,7 @@ class Campaign < ActiveRecord::Base
   has_many :teams
   has_many :archived_fundraisers
 
-  def by_slug(slug)
-    where(slug: slug).first
+  def self.by_slug(slug)
+    Siepomaga.campaigns.select { |c| c.slug == slug }.first or raise Exception.new("Cannot find campaign")
   end
 end

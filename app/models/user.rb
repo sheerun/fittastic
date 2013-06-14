@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :teams, :through => :members
   has_many :members
   has_many :activities
+  has_many :upvotes
 
   serialize :facebook_data, Hash
 

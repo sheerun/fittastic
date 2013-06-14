@@ -13,7 +13,7 @@ class CampaignsController < ApplicationController
 
     team.set_campaign!(campaign)
 
-    redirect_to edit_campaign_path(team, page: "goals"), :notice => "Zapisano!"
+    redirect_to edit_team_path(team, page: "goals"), :notice => "Zapisano!"
   end
 
   private

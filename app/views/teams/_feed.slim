@@ -1,19 +1,21 @@
 h1.lead Aktywność zbiórki
 
 .ft-feed
-  - for action in team.feed
-    article.ft-feed-item.media class=(action.user == current_user ? 'ft-feed-item--mine' : '')
+  - for activity in team.feed
+    article.ft-feed-item.media class=(activity.user == current_user ? 'ft-feed-item--mine' : '')
       .pull-right
         .ft-feed-item-value
           ' Wartość wpisu:
           b
-            span data-value-updatable=""= action.value
+            span data-value-updatable=""= activity.value
             '  zł
-        - if action.user != current_user
-          button.ft-feed-item-button.btn.btn-success.btn-small data-value="1" Podbij o 1 zł
+        - if activity.user != current_user && activity.upvotes.where(:user_id => current_user).count == 0
+          = link_to 'Podbij o 1 zł', upvote_activity_path(activity.id),
+            :data => { value: 1, :remote => true },
+            :class => "ft-feed-item-button btn btn-success btn-small"
       .media-object
-        = image_tag action.user.picture("large"), width: 64, height: 64
+        = image_tag activity.user.picture("large"), width: 64, height: 64
       .media-body
-        h4.media-heading= action.user.full_name
-        p= action.description
-        .muted= action.created_at
+        h4.media-heading= activity.user.full_name
+        p= activity.description
+        .muted= activity.created_at

@@ -1,16 +1,15 @@
 .ft-content.row-fluid role='main'
   .span8
-    section
+    section.campaigns
       h1.lead Wybierz cel
-
       - for campaign in @campaigns
         - url = team_campaign_path(team)
         = simple_form_for [team, campaign], method: 'put', url: url do |f|
-          h2 = link_to campaign['purpose'], campaign['link']
-          = image_tag campaign['picture']
-          = f.input :
-          = f.submit 'Wybierz', :class => 'btn btn-info'
-
-  - if team.campaign.present?
+          h2
+            = image_tag campaign['picture']
+            = link_to campaign['purpose'], campaign['link']
+            = hidden_field_tag 'campaign[slug]', campaign['slug']
+            = f.submit 'Wybierz', :class => 'btn btn-info'
+  - if team.fundraiser.present?
     .ft-sidebar.span4
       section.ft-goal= render 'goal'

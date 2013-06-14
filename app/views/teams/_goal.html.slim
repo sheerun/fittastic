@@ -1,14 +1,11 @@
-- if false
+- if team.fundraiser.present?
   header
     h1.lead Aktualny cel
-    a href="#"
-      img src="http://placehold.it/400x200" alt="Nazwa zbiórki"
-
+    = link_to  team.fundraiser.url do
+      = image_tag(team.fundraiser.picture, :style => "margin-right: 10px")
+      span(style="font-weight: bold")= team.fundraiser.purpose
   table.table
     tbody
       tr
-        th Ogranizacja
-        td Pajacyk
-      tr
         th Aktualny postęp
-        td 600/1000 zł
+        td #{team.total_fundraiser} zł

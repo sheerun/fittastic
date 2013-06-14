@@ -14,7 +14,7 @@
           - for user in team.users
             tr
               td= "#{user.first_name} #{user.last_name}"
-              td 0 zł
+              td #{user.total_fundraiser} zł
               td= l user.created_at
               td
                 - if user != current_user

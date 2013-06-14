@@ -4,7 +4,7 @@ class Team < ActiveRecord::Base
   has_many :users, :through => :members
   has_many :activities
 
-  belongs_to :campaign
+  belongs_to :fundraiser
 
   validates :name, :presence => true
   validates :nip, :presence => true
@@ -19,8 +19,10 @@ class Team < ActiveRecord::Base
   end
 
   def set_campaign!(campaign)
-    self.campaign = campaign
-    save!
+    unless campaign.nil?
+      self.fundraiser = Fundraiser.new(:campaign => campaign)
+      save!
+    end
   end
 
   def token

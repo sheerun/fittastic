@@ -1,7 +1,14 @@
 class ActivitiesController < ApplicationController
   
   expose(:team)
-  expose(:activity) { current_user.activities.build(activity_params.merge(:team_id => team.id)) }
+  expose(:activity) { 
+    if params[:id] 
+      Activity.find(params[:id])
+    else
+      current_user.activities.build(activity_params.merge(:team_id => team.id)) 
+    end
+  }
+
 
   def create
     if activity.save
@@ -10,7 +17,15 @@ class ActivitiesController < ApplicationController
       redirect_to team_path(team), :status => :unprocessable_entity
     end
   end
-  
+
+  def upvote
+    unless activity.upvotes.where(:user_id => current_user.id).first
+      activity.upvotes.create(:user_id => current_user.id)
+    end
+
+    render :json => { :success => true }
+  end
+
   private
 
     def activity_params

@@ -15,7 +15,7 @@ module Siepomaga extend self
     Campaign.new(
       name:     fundrize.search(".aim").text,
       picture:  photo,
-      slug:     base_uri+fundrize.search(".user h4 a").attribute("href").value(),
+      slug:     fundrize.search(".user h4 a").attribute("href").value().split('/').last,
       user:     fundrize.search(".user h4").text,
       purpose:  fundrize.search(".collect strong").text,
       occasion: fundrize.search(".occasion strong").text

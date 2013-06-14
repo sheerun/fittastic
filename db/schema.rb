@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130531120521) do
+ActiveRecord::Schema.define(version: 20130607145622) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "resource_id",   null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20130531120521) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "team_id"
+    t.float    "value"
   end
 
   create_table "admin_users", force: true do |t|
@@ -54,14 +55,6 @@ ActiveRecord::Schema.define(version: 20130531120521) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-
-  create_table "archived_fundraisers", force: true do |t|
-    t.integer  "team_id"
-    t.integer  "campaign_id"
-    t.decimal  "total_amount", precision: 8, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -83,6 +76,14 @@ ActiveRecord::Schema.define(version: 20130531120521) do
     t.datetime "updated_at"
   end
 
+  create_table "fundraisers", force: true do |t|
+    t.integer  "team_id"
+    t.integer  "campaign_id"
+    t.decimal  "total_amount", precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "members", force: true do |t|
     t.integer  "user_id"
     t.integer  "team_id"
@@ -92,13 +93,21 @@ ActiveRecord::Schema.define(version: 20130531120521) do
 
   create_table "teams", force: true do |t|
     t.string   "nip"
-    t.string   "campaign_id"
     t.string   "name"
     t.string   "picture"
-    t.integer  "budget",      default: 0
+    t.integer  "budget",        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "token"
+    t.integer  "fundraiser_id"
+  end
+
+  create_table "upvotes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.decimal  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
