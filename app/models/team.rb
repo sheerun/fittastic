@@ -10,9 +10,10 @@ class Team < ActiveRecord::Base
   validates :nip, :presence => true
   validates :budget,
     :presence => true,
-    :numericality => { :only_integer => true, :greather_than => 0 }
+    :numericality => { :only_integer => true, :greater_than => 0 }
 
   validate :check_nip
+
 
   def feed
     activities.order('id DESC')
