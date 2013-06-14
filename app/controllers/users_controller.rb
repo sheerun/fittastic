@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  
+
+  expose :team
   expose :user, :attributes => :user_params
+  expose(:activity) { Activity.new }
 
   def show
     authorize! :read, team  
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
 
     redirect_to edit_team_path(team, :page => "employees"), :alert => "Pracownik został usunięty z teamu"
   end
-  
+
   private
 
     def user_params
