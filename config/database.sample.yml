@@ -1,11 +1,19 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: fittastic_development
   pool: 5
-  timeout: 5000
+  host: localhost
+  username:
+  password:
+  template: template0
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: fittastic_test
   pool: 5
-  timeout: 5000
+  host: localhost
+  username:
+  password:
+  template: template0
