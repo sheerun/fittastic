@@ -249,6 +249,9 @@ GEM
     rails-timeago (2.1.1)
       actionpack (>= 3.1)
       activesupport (>= 3.1)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_best_practices (1.13.5)
       activesupport
       awesome_print
@@ -257,6 +260,8 @@ GEM
       erubis
       i18n
       ruby-progressbar
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.2)
     railties (4.0.0.rc1)
       actionpack (= 4.0.0.rc1)
       activesupport (= 4.0.0.rc1)
@@ -371,6 +376,7 @@ DEPENDENCIES
   rails-i18n
   rails-timeago (~> 2.0)
   rails3_serve_static_assets!
+  rails_12factor
   rails_best_practices
   rails_log_stdout!
   ransack!
