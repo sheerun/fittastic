@@ -21,3 +21,4 @@ public/
 
 # mac files
 *.DS_Store
+config/database.yml
