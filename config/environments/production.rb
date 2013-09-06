@@ -79,4 +79,6 @@ TeamProject::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.lograge.log_format = :logstash
+
+  config.assets.initialize_on_precompile = false
 end
